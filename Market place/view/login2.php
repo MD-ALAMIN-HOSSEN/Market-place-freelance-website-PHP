@@ -1,3 +1,21 @@
+<?php
+ $pass=$err_pass="";
+ $error=false;
+ 
+ if(isset($_POST['submit'])){
+    $pass=$_POST['password'];
+    if($pass==""){
+        $err_pass="Give password ";
+        $error=true;
+        
+    }    
+    if(!$error){
+        header('location: ../controller/loginCheck.php');
+    }
+  
+ }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +80,7 @@
 </head>
 
 <body>
-    <form action="../controller/loginCheck.php" method="post">
+    <form action="#" method="post">
         <div class="form-group center">
             <h1>Welcome </h1>
         </div>
@@ -71,13 +89,16 @@
         </div>
         <div class="form-group center">
             <input type="password" placeholder="password " name="password"><br>
+            <?php
+                echo "<br>$err_pass";
+            ?>
         </div>
         <div class="form-group center ">
             <!-- Style the link as a button -->
             <a href="forgot_password.php" class="button-link">Forgot password?</a><br>
         </div>
         <div class="form-group center">
-            <button type="submit">Login</button>
+            <button type="submit"  name="submit">Login</button>
         </div>
 
     </form>
