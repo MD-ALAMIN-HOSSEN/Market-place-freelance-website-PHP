@@ -1,10 +1,12 @@
+
 <?php
 session_start();
 if(!isset($_SESSION['flag'])){
     header('location: ../view/login1.php');  
     
     }
-    
+
+
  $email=$name=$details=$err_email=$err_name=$err_details=$result="";
  $error=false;
  if(isset($_POST['submit'])){
