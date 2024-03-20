@@ -1,3 +1,14 @@
+
+<?php
+session_start();
+if(!isset($_SESSION['flag'])){
+    header('location: ../view/login1.php');  
+    
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +23,7 @@
 <body>
     
             <h1>Dashboard</h1>
+            
         
 </body>
 <?php include "../include/bottombar.php" ?>

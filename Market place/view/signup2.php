@@ -12,32 +12,38 @@
     $email=$_POST['email'];
 
     if($fname==""){
-        $err_email="Give mail ";
+        $err_fname=" Give First Name";
         $error=true;
         
     }
+
     if($lname==""){
-      $err_email="Give mail ";
+      $err_lname="Give Last_Name ";
       $error=true;
       
   }
   if($pass==""){
-    $err_email="Give mail ";
+    $err_pass="Give password ";
     $error=true;
     
 }
 if($confirmpass==""){
-  $err_email="Give mail ";
+  $err_confirmpass="Give confirm password ";
   $error=true;
   
 }
+if($confirmpass!=""&&$confirmpass!=$pass){
+    $err_confirmpass="password and confirm password doesn't match ";
+    $error=true;
+    
+  }
 if($forgotphrase==""){
-  $err_email="Give mail ";
+  $err_forgotphrase="Give forgot password phrase ";
   $error=true;
   
 }
 if($country==""){
-  $err_email="Give mail ";
+  $err_country="Give Country ";
   $error=true;
   
 }
@@ -54,9 +60,7 @@ if($email==""){
     if(!$error){
         header('location: ../controller/singupCheck.php');
     }
-    if($error){
-      echo "please fill the form";
-  }
+    
     
  }
 ?>
@@ -118,42 +122,64 @@ if($email==""){
         <div class="form-group">
             <label for="name">First Name:</label>
             <input type="text" name="First_Name">
+            <?php
+                echo "<br><span style='color: red;'>$err_fname </span><br>";
+            ?>
             <label for="name">Last Name:</label>
             <input type="text" name="Last_Name">
+            <?php
+                echo "<br><span style='color: red;'>$err_lname</span>";
+            ?>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="email" name="email">
+            <?php
+                echo "<br><span style='color: red;'>$err_email</span>";
+            ?>
         </div>
 
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" name="password">
+            <?php
+                echo "<br><span style='color: red;'>$err_pass</span>";
+            ?>
         </div>
         <div class="form-group">
             <label for="confirm_password">Confirm Password:</label>
             <input type="password" name="confirm_password">
+            <?php
+                echo "<br><span style='color: red;'>$err_confirmpass</span>";
+            ?>
         </div>
         <div class="form-group">
             <label for="forgot_password_phrase">Forgot password phrase:</label>
             <input type="text" name="forgot_password_phrase">
+            <?php
+                echo "<br><span style='color: red;'>$err_forgotphrase</span>";
+            ?>
         </div>
         <div class="form-group">
             <label for="Country">Country:</label>
             <input type="text" name="Country">
+            <?php
+                echo "<br><span style='color: red;'>$err_country</span>";
+            ?>
         </div>
 
         <div class="form-group">
             <label for="date_of_birth">Date of Birth:</label>
-            <input type="date" name="date_of_birth">
+            <input type="date" name="date_of_birth" require>
+
         </div>
-        <div class="form-group">
+        <div class="form-group" >
             <label for="gender">Gender:</label>
-            <input type="radio" name="gender" id="male" value="male">
+            <input type="radio" name="gender" id="male" value="male" require>
             <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="female">
+            <input type="radio" name="gender" id="female" value="female" require>
             <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" value="other">
+            <input type="radio" name="gender" id="other" value="other" require>
             <label for="other">Other</label>
         </div>
 

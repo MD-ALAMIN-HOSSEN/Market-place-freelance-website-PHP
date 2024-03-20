@@ -4,14 +4,15 @@
  
  if(isset($_POST['submit'])){
     $email=$_POST['email'];
+
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $err_email="Invalid email format.";
+        $error=true;
+    }
     if($email==""){
         $err_email="Give mail ";
         $error=true;
         
-    }
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $err_email="Invalid email format.";
-        $error=true;
     }
     if(!$error){
         header('location: ../view/login2.php');
@@ -91,7 +92,7 @@
         <div class="form-group center">
             <input type="email" placeholder="Email " name="email">
             <?php
-                echo "<br>$err_email";
+                echo "<br><span style='color: red;'>$err_email</span>";
             ?>
             <br>
         </div>

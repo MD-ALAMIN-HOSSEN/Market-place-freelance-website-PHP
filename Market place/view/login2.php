@@ -90,7 +90,7 @@
         <div class="form-group center">
             <input type="password" placeholder="password " name="password"><br>
             <?php
-                echo "<br>$err_pass";
+                echo "<br><span style='color: red;'>$err_pass</span>";
             ?>
         </div>
         <div class="form-group center ">
