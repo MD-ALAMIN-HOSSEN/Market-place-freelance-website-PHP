@@ -52,7 +52,7 @@ if(!isset($_SESSION['flag'])){
             <div><a class="button-link2 " href="#">Contact me</a></div>
             </div>
             
-            <div><a href="#" class="space-around space-around">report user</a></div>
+            <div><a href="../controller/reportUser.php" class="space-around space-around">report user</a></div>
         </div>
     </div>
 
