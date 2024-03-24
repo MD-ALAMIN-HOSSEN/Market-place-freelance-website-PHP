@@ -204,3 +204,21 @@ button {
 .margin-button{
     margin-left: 30%;
 }
+
+.thick {
+    margin-left: 2%;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .proposal-s{
+    display: flex;
+    margin: auto;
+    height :150px;
+    background-color: #D9D9D9;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }

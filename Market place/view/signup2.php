@@ -117,7 +117,7 @@ if($email==""){
 <body>
     <form action="#" method="post">
         <div class="form-group center">
-            <h1>Signup</h1>
+            <h1>Signup2</h1>
         </div>
         <div class="form-group">
             <label for="name">First Name:</label>

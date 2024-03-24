@@ -13,7 +13,7 @@ if(!isset($_SESSION['flag'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login1</title>
+    <title>order_details_buyer</title>
     <link rel="stylesheet" href="css.css">
 
 
@@ -21,6 +21,7 @@ if(!isset($_SESSION['flag'])){
 <?php include "../include/topbar.php" ?>
 
 <body>
+    <h3>Order details</h3>
     <div class="card-2">
         <div class="card-left">
             <div class="space-around">
