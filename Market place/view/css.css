@@ -5,6 +5,8 @@
     background-color: #EED6D6;
 }
 
+
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -23,7 +25,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     color: #000000;
     padding: 10px 20px;
@@ -56,9 +58,11 @@ footer {
     text-align: center;
 }
 
+
 label {
     font-size: 20px;
 }
+
 
 button {
     font-size: 20px;
@@ -75,6 +79,13 @@ button {
     text-decoration: none;
 
 }
+
+.card-link {
+    color: #000;
+    text-decoration: none;
+
+}
+
 .button-style {
     padding: 10px 20px;
     border-radius: 20px;
@@ -94,4 +105,59 @@ button {
     width :800px;
     height :200px;
     border-radius: 25px;
+}
+
+
+.card {
+    display: flex;
+    margin: auto;
+    /*    margin-top: 20px;*/
+    background-color: #D9D9D9;
+    width :90%;
+    height :300px;
+    border-radius: 25px;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.space-around{
+    margin: 30px;
+}
+.card-left{
+    flex: 3.5;
+    /*background-color: #af2020;*/
+} 
+.card-right {
+    flex: 1;
+    text-align: right;
+    margin: 20px;
+    /*background-color: #3da35a;*/
+}
+
+.titel {
+    font-weight: bold;
+}
+
+.menu-icon {
+    margin-top: 10px;
+}
+
+
+.price {    
+    padding: 5px 4px;
+    background-color: #db9b9b;
+    color: #000;
+    border-radius: 10px;
+    
+}
+
+.button-link2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #db9b9b;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+
 }
