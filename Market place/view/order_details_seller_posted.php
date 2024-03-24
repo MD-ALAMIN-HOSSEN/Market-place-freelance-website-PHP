@@ -34,12 +34,7 @@ if(!isset($_SESSION['flag'])){
                 <div> <a class="button-link2 space-around" href="#">Files</a></div>
             </div>
             <div class="margin-button">
-                Job files :
-                <a class="button-link2 space-around" href="#">Download</a>
-                <a class="button-link2 space-around" href="#">Add Requests</a>
-            </div>
-            <div class="margin-button">
-                <a class="button-link2 space-around" href="#">Complete</a>
+                <a class="button-link2 space-around" href="#">Accept</a>
                 <a class="button-link2 space-around" href="#">Cancel</a>
             </div>
 

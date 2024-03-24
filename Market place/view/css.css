@@ -20,7 +20,6 @@ nav {
 }
 
 footer {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,9 +54,19 @@ footer {
 }
 
 .center {
+    
     text-align: center;
 }
 
+.center1{
+    margin: 10px;
+    padding: 10px;
+    width :90%;
+    height :200px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    
+}
 
 label {
     font-size: 20px;
@@ -100,11 +109,13 @@ button {
     width :700px;
     height :20px;
     border-radius: 5px;
+    background-color: #D9D9D9;
 }
 .input-details{
     width :800px;
     height :200px;
     border-radius: 25px;
+    background-color: #D9D9D9;
 }
 
 
@@ -120,8 +131,23 @@ button {
     align-items: center;
     justify-content: space-between;
 }
+.card-2{
+    display: flex;
+    margin: auto;
+    /* 
+    margin-top: 20px;
+    height :300px;
+    background-color: #27138b;
+    */
+    
+    
+    border-radius: 25px;
+    margin: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
 .space-around{
-    margin: 30px;
+    margin: 30px ;
 }
 .card-left{
     flex: 3.5;
@@ -130,6 +156,14 @@ button {
 .card-right {
     flex: 1;
     text-align: right;
+    margin: 20px;
+    /*background-color: #3da35a;*/
+}
+.card-right2 {
+    flex: 1;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    text-align: center; /* Center text */
     margin: 20px;
     /*background-color: #3da35a;*/
 }
@@ -151,6 +185,11 @@ button {
     
 }
 
+.price2 {
+    margin-top: auto;
+    margin-bottom: 60%; /* Move the price label to the top */
+}
+
 .button-link2 {
     display: inline-block;
     padding: 10px 20px;
@@ -160,4 +199,8 @@ button {
     border-radius: 5px;
     text-decoration: none;
 
+}
+
+.margin-button{
+    margin-left: 30%;
 }

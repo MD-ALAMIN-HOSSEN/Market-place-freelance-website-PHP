@@ -22,7 +22,7 @@ if(!isset($_SESSION['flag'])){
 <body>
 
         <h2>Order Buyer</h2>
-        <a href="order_details_seller.php" class="card-link">
+        <a href="order_details_seller_posted.php" class="card-link">
         <div class="card">
             <div class="card-left">
                 <div class="space-around">
@@ -36,7 +36,7 @@ if(!isset($_SESSION['flag'])){
                 <div class="menu-icon space-around"><img src="../asset/menu.png" alt=""></div>
                 <div class="space-around">Price: <label class="price" >10$</label></div>
                 <div class="status space-around">status : Posted</div>
-                <div > <a class="button-link2 space-around"  href="order_details_seller.php"> see more</a></div>
+                <div > <a class="button-link2 space-around"  href="order_details_seller_posted.php"> see more</a></div>
             </div>
         </div>
         </a>
