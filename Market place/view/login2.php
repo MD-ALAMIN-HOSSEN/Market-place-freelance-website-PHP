@@ -2,18 +2,7 @@
  $pass=$err_pass="";
  $error=false;
  
- if(isset($_POST['submit'])){
-    $pass=$_POST['password'];
-    if($pass==""){
-        $err_pass="Give password ";
-        $error=true;
-        
-    }    
-    if(!$error){
-        header('location: ../controller/loginCheck.php');
-    }
-  
- }
+
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +69,7 @@
 </head>
 
 <body>
-    <form action="#" method="post">
+    <form action="../controller/loginCheck.php" method="post">
         <div class="form-group center">
             <h1>Welcome </h1>
         </div>
@@ -88,6 +77,7 @@
             <label>abc@gamil.com</label>
         </div>
         <div class="form-group center">
+            <input type="hidden" name="email" value="<?php echo $_POST['email'];?>">
             <input type="password" placeholder="password " name="password"><br>
             <?php
                 echo "<br><span style='color: red;'>$err_pass</span>";

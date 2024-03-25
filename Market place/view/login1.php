@@ -15,7 +15,7 @@
         
     }
     if(!$error){
-        header('location: ../view/login2.php');
+        
     }
   
  }
@@ -85,7 +85,7 @@
 </head>
 
 <body>
-    <form action="login1.php" method="POST">
+    <form action="login2.php" method="POST">
         <div class="form-group center">
             <h1>Login to Job Board</h1>
         </div>

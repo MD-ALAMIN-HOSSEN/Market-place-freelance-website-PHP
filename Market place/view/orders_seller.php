@@ -21,7 +21,7 @@ if(!isset($_SESSION['flag'])){
 <?php include "../include/topbar.php" ?>
 <body>
 
-        <h2>Order Buyer</h2>
+        <h2>Order seller</h2>
         <a href="order_details_seller_posted.php" class="card-link">
         <div class="card">
             <div class="card-left">

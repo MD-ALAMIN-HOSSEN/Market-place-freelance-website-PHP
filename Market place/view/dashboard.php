@@ -6,6 +6,8 @@ if(!isset($_SESSION['flag'])){
     
     }
 
+    
+
 
 ?>
 
@@ -23,6 +25,7 @@ if(!isset($_SESSION['flag'])){
 <body>
     
             <h1>Dashboard</h1>
+            you are logged in as a : <?php echo $_SESSION['status'];  ?>
             
         
 </body>

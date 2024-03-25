@@ -54,11 +54,11 @@
             </tr>
             <tr>
                 <td class="option">
-                    <input type="radio" name="type" id="client" value="client" required>
+                    <input type="radio" name="type" id="client" value="buyer" required>
                     <label for="client">I ama a client hiring for a project</label><br> 
                 </td>
                 <td class="option">
-                    <input type="radio" name="type" id="freelancer" value="freelancer" required> 
+                    <input type="radio" name="type" id="freelancer" value="seller" required> 
                     <label for="freelancer">I am a freelancer looking for job</label><br>
                 </td>
             </tr>
