@@ -70,7 +70,7 @@ if(!isset($_SESSION['flag'])){
     <?php
         echo "<br><span style='color: green;'>$result</span>";
     ?>
-    <form action="#" class="form" method="post"  enctype="multipart/form-data">
+    <form action="../controller/report_bug_contact_meCheck.php" class="form" method="post"  enctype="multipart/form-data">
         <div class="form-group ">
             <h1>Report bug /contact us</h1>
         </div>

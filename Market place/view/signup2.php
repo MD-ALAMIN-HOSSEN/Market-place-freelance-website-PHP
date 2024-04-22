@@ -9,47 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup2</title>
-    <style>
-    body {
-        display: flex;
-        font-size: 20px;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+    <link rel="stylesheet" href="css2.css">
 
-    .option {
-        text-align: center;
-        background-color: #D9D9D9;
-    }
-
-    form {
-        width: 40%;
-        border: 1px solid #000;
-        border-radius: 10px;
-        margin: auto;
-        padding: 30px;
-    }
-
-    .form-group {
-        padding: 3px;
-        display: block;
-    }
-
-    .center {
-        text-align: center;
-
-    }
-
-    label {
-        font-size: 20px;
-    }
-
-    button {
-        font-size: 20px;
-    }
-    </style>
 </head>
 
 <body>

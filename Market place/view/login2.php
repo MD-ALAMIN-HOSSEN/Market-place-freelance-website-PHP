@@ -12,60 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login2</title>
-    <style>
-    body {
-        display: flex;
-        font-size: 20px;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .option {
-        text-align: center;
-        background-color: #D9D9D9;
-    }
-
-    form {
-        width: 40%;
-        border: 1px solid #000;
-        border-radius: 10px;
-        margin: auto;
-        padding: 30px;
-    }
-
-    .form-group {
-        padding: 3px;
-        display: block;
-    }
-
-
-    .center {
-        text-align: center;
-    }
-
-    label {
-        font-size: 20px;
-    }
-
-    button {
-        font-size: 20px;
-    }
-
-    a {
-        font-size: 15px;
-        float: right;
-    }
-
-    input[type="password"] {
-        width: calc(100% - 10px);
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #000;
-        
-    }
-    </style>
+    <link rel="stylesheet" href="login2css.css">
+ 
 </head>
 
 <body>
@@ -74,7 +22,7 @@
             <h1>Welcome </h1>
         </div>
         <div class="form-group ">
-            <label>abc@gamil.com</label>
+            <label><?php echo $_POST['email'];?></label>
         </div>
         <div class="form-group center">
             <input type="hidden" name="email" value="<?php echo $_POST['email'];?>">

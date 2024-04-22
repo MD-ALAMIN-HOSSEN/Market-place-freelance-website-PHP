@@ -38,7 +38,7 @@
 
 
    
-    
+
     function createUser(){
         $con = dbConnection();
         $fname=$_POST['First_Name'];
@@ -51,7 +51,7 @@
         $status=$_POST['type'];
         $date_of_birth=$_POST['date_of_birth'];
         $gender=$_POST['gender'];
-        
+
 
        // Inserting into the 'user' table
         $sql1 = "INSERT INTO user (Email, Password, Forgot_password_phrase, Status_type) VALUES ('$email', '$pass', '$forgotphrase', '$status')";
@@ -59,7 +59,7 @@
         if(mysqli_query($con, $sql1)){
             // Get the ID of the last inserted record
          $user_id = mysqli_insert_id($con);
-         echo $user_id;
+         //echo $user_id;
             // Inserting into the 'user_profile' table
             $sql2 = "INSERT INTO user_profile ( User_id, First_name, Last_name, Country , Date_of_birth , Gender ) VALUES ( '$user_id', '$fname', '$lname', '$country', '$date_of_birth','$gender')";       
             if(mysqli_query($con, $sql2)){
@@ -70,6 +70,22 @@
         } else {
         return false;
         }
+    }
+
+    function saveReportBugContactMe (){
+        $con = dbConnection();
+        $name=$_POST['Name'];	
+        $email=$_POST['email'];
+        $details=$_POST['details'];
+        $files = $_FILES['myfile']['name'];
+
+        $sql1 = "INSERT INTO contact (name,	email, details, files) VALUES ('$name', '$email', '$details', '$files')";
+
+        if(mysqli_query($con, $sql1)){        
+             return true;            
+        } else {
+        return false;
+        }	
     }
 
 

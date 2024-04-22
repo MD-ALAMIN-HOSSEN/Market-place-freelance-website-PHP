@@ -5,41 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup1</title>
-    <style>
-    body {
-        display: flex;
-        font-size: 30px;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    table {
-        margin: auto;      
-    }
-    .option {
-        text-align: center;
-
-        background-color: #D9D9D9;
-    }
-
-    form {
-        width: 40%;
-        border: 1px solid #000;
-        border-radius: 10px;
-        margin: auto;
-        padding: 30px;
-    }
+    <link rel="stylesheet" href="css1.css">
     
-    label {
-        font-size: 40px; /* Adjust the text size for labels */
-    }
-
-    button {
-        font-size: 35px; /* Adjust the text size for buttons */
-    }
-    </style>
 </head>
 
 <body>
