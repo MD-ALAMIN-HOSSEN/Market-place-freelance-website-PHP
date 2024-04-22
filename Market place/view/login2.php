@@ -13,11 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login2</title>
     <link rel="stylesheet" href="login2css.css">
+    <script type="text/javascript" src="javascript.js"></script>
  
 </head>
 
 <body>
-    <form action="../controller/loginCheck.php" method="post">
+    <form action="../controller/loginCheck.php" method="post" onsubmit="return validatePassword();">
         <div class="form-group center">
             <h1>Welcome </h1>
         </div>
@@ -26,7 +27,8 @@
         </div>
         <div class="form-group center">
             <input type="hidden" name="email" value="<?php echo $_POST['email'];?>">
-            <input type="password" placeholder="password " name="password"><br>
+            <input type="password" placeholder="password " name="password" id="password"><br>
+            <span class="error" id="PasswordError"></span>
             <?php
                 echo "<br><span style='color: red;'>$err_pass</span>";
             ?>
