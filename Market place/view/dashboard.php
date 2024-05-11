@@ -28,15 +28,19 @@ if(!isset($_SESSION['flag'])){
             you are logged in as a : <?php echo $_SESSION['status'];  ?>
             <?php
                 if($_SESSION['status']=="buyer"){
-                    echo "bubyer button";
+                    //echo "bubyer button";
                     ?>
-                    <a href="job_post.php"> Post job</a>
+                    <br>
+                    <br>
+                    <a href="job_post.php" class="button-link"> Post job</a>
             <?php
                 }
                 if($_SESSION['status']=="seller"){
-                    echo "seller button";
+                    //echo "seller button";
                     ?>
-                    <a href="job_post.php"> Post job</a>
+                    <br>
+                    <br>
+                    <a href="gig_post.php" class="button-link"> Post gig</a>
             <?php
                 }
             ?>
