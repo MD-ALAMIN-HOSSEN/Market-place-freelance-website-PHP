@@ -26,6 +26,20 @@ if(!isset($_SESSION['flag'])){
     
             <h1>Dashboard</h1>
             you are logged in as a : <?php echo $_SESSION['status'];  ?>
+            <?php
+                if($_SESSION['status']=="buyer"){
+                    echo "bubyer button";
+                    ?>
+                    <a href="job_post.php"> Post job</a>
+            <?php
+                }
+                if($_SESSION['status']=="seller"){
+                    echo "seller button";
+                    ?>
+                    <a href="job_post.php"> Post job</a>
+            <?php
+                }
+            ?>
             
         
 </body>
