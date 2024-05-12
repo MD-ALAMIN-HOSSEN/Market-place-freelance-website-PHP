@@ -59,7 +59,7 @@ if(!isset($_SESSION['flag'])){
 
 <body>
     <?php
-        echo "<br><span style='color: green;'>$result</span>";
+       //echo "<br><span style='color: green;'>{$_SESSION['user_id']}</span>";
     ?>
     <form action="#" class="form" method="post"  enctype="multipart/form-data">
         <div >

@@ -1,4 +1,5 @@
 <?php 
+session_start();
     require_once('db.php');
 
     function login($email, $password){
@@ -36,7 +37,24 @@
        
     }
 
+    function gettingUserId($email, $password){
+        $con = dbConnection();
+        $sql = "select * from user where Email='{$email}' and Password='{$password}'";
+        $result = mysqli_query($con, $sql);
+        if ($result) {
+            $row = mysqli_fetch_assoc($result);
+            if ($row) {
+                // Access the value of the Status_type column from the row
+                $user_id = $row['User_id'];
+                // Return the value of Status_type
+                return $user_id;
+            } else {
+                // If no row was found, return null or false, depending on your requirements
+                return null; // or return false;
+            }
+        }
 
+    }
    
 
     function createUser(){
@@ -89,7 +107,37 @@
     }
 
 
+    function createJob(){
+        $con = dbConnection();
+        $jobTitel=$_POST['job-titel'];
+        $price=$_POST['Price'];
+        $delivery_date=$_POST['date'];
+        $category=$_POST['Category'];
+        $details=$_POST['details'];
+        $skills=$_POST['skills'];
+        $user_id=$_SESSION['user_id'];
+        $status="posted";
+       //echo $user_id;
+       $file_name = $_FILES['myfile']['name'];// file name
+        $file_tmp = $_FILES['myfile']['tmp_name'];//temp location
+        $file_type = $_FILES['myfile']['type'];//type
+        $file_size = $_FILES['myfile']['size'];//size
+        $uploads_dir = '../upload/';
+        //echo exec('whoami');
+        //move the file to the dir
+        move_uploaded_file($file_tmp, $uploads_dir . $file_name);
 
+
+       // Inserting into the 'job' table
+        $sql1 = "INSERT INTO job (Category, User_id, Titel, Price, Delivery_date, Details, Skills, Post_dateTime, Job_file, Status) VALUES ('$category', '$user_id', '$jobTitel', '$price', '$delivery_date', '$details', '$skills', NOW(), '$file_name', '$status')";
+        if(mysqli_query($con, $sql1)){
+            echo  "saved";
+             return true;
+           } else {
+                return false;
+            }
+    
+    }
   
 
 ?>

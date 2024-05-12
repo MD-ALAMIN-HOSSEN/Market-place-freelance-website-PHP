@@ -53,15 +53,15 @@ if(!isset($_SESSION['flag'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>job_post</title>
     <link rel="stylesheet" href="css.css">
-
+    <script type="text/javascript" src="javascript.js"></script>
 </head>
 <?php include "../include/topbar.php" ?>
 
 <body>
     <?php
-        echo "<br><span style='color: green;'>$result</span>";
+       // echo "<br><span style='color: green;'>{$_SESSION['user_id']}</span>";
     ?>
-    <form action="#" class="form" method="post"  enctype="multipart/form-data">
+    <form action="../controller/jobPostCheck.php" class="form" method="post"  enctype="multipart/form-data">
         <div >
             <h2>Job post</h2>
         </div>
@@ -117,7 +117,7 @@ if(!isset($_SESSION['flag'])){
         </div>
         <div class="form-group center">
             <button class=" button-style" type="submit" name="submit">Post</button>
-            <button class=" button-style" type="" name="cancel">cancel</button>
+            <button class=" button-style" type="button" name="cancel" onclick="goBack()">cancel</button>
       
         </div>
 

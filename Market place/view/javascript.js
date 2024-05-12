@@ -54,3 +54,7 @@ function validateSignUp1() {
 
     return true;
 }
+
+function goBack() {
+    window.history.back();
+}
