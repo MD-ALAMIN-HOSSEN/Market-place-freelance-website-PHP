@@ -129,15 +129,49 @@ session_start();
 
 
        // Inserting into the 'job' table
-        $sql1 = "INSERT INTO job (Category, User_id, Titel, Price, Delivery_date, Details, Skills, Post_dateTime, Job_file, Status) VALUES ('$category', '$user_id', '$jobTitel', '$price', '$delivery_date', '$details', '$skills', NOW(), '$file_name', '$status')";
+        $sql1 = "INSERT INTO job (Category, User_id, Titel, Price, Delivery_date, Details, Skills, Post_dateTime, Job_file, Status) 
+        VALUES ('$category', '$user_id', '$jobTitel', '$price', '$delivery_date', '$details', '$skills', NOW(), '$file_name', '$status')";
         if(mysqli_query($con, $sql1)){
-            echo  "saved";
+            //echo  "saved";
              return true;
            } else {
                 return false;
             }
     
     }
-  
+
+    function creategig(){
+        $con = dbConnection();
+        $gigTitel=$_POST['gig-titel'];
+        $price=$_POST['Price'];
+        $number_of_review=$_POST['number-of-review'];
+        $delivery_in_days=$_POST['delivery_in_days'];
+        $category=$_POST['Category'];
+        $details=$_POST['details'];
+        $skills=$_POST['skills'];
+        $user_id=$_SESSION['user_id'];
+        //$status="posted";
+        $uploads_dir = '../upload/';
+
+       //gig image
+       $file_name_gig = $_FILES['gig-image']['name'];// file name
+        $file_tmp_gig = $_FILES['gig-image']['tmp_name'];//temp location
+        $file_type_gig = $_FILES['gig-image']['type'];//type
+        $file_size_gig = $_FILES['gig-image']['size'];//size
+        move_uploaded_file($file_tmp_gig, $uploads_dir . $file_name_gig);
+
+       // Inserting into the 'gig' table
+        $sql1 = "INSERT INTO gig (Category, User_id, Titel, Image, Details, Skills, Price, Delivery_in_days, Post_dateTime) 
+        VALUES ('$category', '$user_id', '$gigTitel', '$file_name_gig', '$details', '$skills', '$price', '$delivery_in_days', NOW())";
+        if(mysqli_query($con, $sql1)){
+            echo  "saved";
+             return true;
+           } else {
+            echo "Error: " . mysqli_error($con);
+                return false;
+            }
+    
+    }
+    
 
 ?>

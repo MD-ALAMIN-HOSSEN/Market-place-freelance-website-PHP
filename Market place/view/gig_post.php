@@ -11,10 +11,10 @@ if(!isset($_SESSION['flag'])){
     $Price=$_POST['Price'];
     $details=$_POST['details'];
 
-    if(empty($_POST['date'])) {
-        $err_date = "Please select a date.";
-        $error = true;
-    }
+    //if(empty($_POST['date'])) {
+      //  $err_date = "Please select a date.";
+     //   $error = true;
+    //}
     
     if($Price==""&& !is_numeric($Price)){
         $err_Price="Give Price ";
@@ -53,7 +53,7 @@ if(!isset($_SESSION['flag'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>job_post</title>
     <link rel="stylesheet" href="css.css">
-
+    <script type="text/javascript" src="javascript.js"></script>
 </head>
 <?php include "../include/topbar.php" ?>
 
@@ -61,7 +61,7 @@ if(!isset($_SESSION['flag'])){
     <?php
        //echo "<br><span style='color: green;'>{$_SESSION['user_id']}</span>";
     ?>
-    <form action="#" class="form" method="post"  enctype="multipart/form-data">
+    <form action="../controller/gigPostCheck.php" class="form" method="post"  enctype="multipart/form-data">
         <div >
             <h2>gig post</h2>
         </div>
@@ -94,8 +94,8 @@ if(!isset($_SESSION['flag'])){
             ?>
         </div>
         <div class="form-group">
-            <label for="date_of_birth">Delivery date :</label>
-            <input class="input-normal" type="date" name="date" require>
+            <label for="delivery_in_days">Delivery in days :</label>
+            <input class="input-normal" type="number" name="delivery_in_days" >
             <?php
                 echo "<br><span style='color: red;'>$err_date</span>";
             ?>
@@ -127,7 +127,7 @@ if(!isset($_SESSION['flag'])){
         </div>
         <div class="form-group center">
             <button class=" button-style" type="submit" name="submit">Post</button>
-            <button class=" button-style" type="" name="cancel">cancel</button>
+            <button class=" button-style" type="button" name="cancel" onclick="goBack()">cancel</button>
       
         </div>
 
