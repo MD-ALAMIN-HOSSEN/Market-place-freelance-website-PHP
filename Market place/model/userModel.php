@@ -164,13 +164,31 @@ session_start();
         $sql1 = "INSERT INTO gig (Category, User_id, Titel, Image, Details, Skills, Price, Delivery_in_days, Post_dateTime) 
         VALUES ('$category', '$user_id', '$gigTitel', '$file_name_gig', '$details', '$skills', '$price', '$delivery_in_days', NOW())";
         if(mysqli_query($con, $sql1)){
-            echo  "saved";
+            //echo  "saved";
              return true;
            } else {
             echo "Error: " . mysqli_error($con);
                 return false;
             }
     
+    }
+
+    function getAllJobs() {
+        $con = dbConnection();
+        $sql = "SELECT * FROM job";
+        $result = mysqli_query($con, $sql);
+        if($result){
+            //echo  "saved";
+            $job_data = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $job_data[] = $row;
+            }
+            return $job_data;
+           } else {
+            echo "Error: " . mysqli_error($con);
+                return false;
+            }
+
     }
     
 

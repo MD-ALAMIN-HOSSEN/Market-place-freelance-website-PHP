@@ -18,9 +18,14 @@ if(!isset($_SESSION['flag'])){
 
 </head>
 <?php include "../include/topbar.php" ?>
-<body>
-    
-            <h1>Jobs</h1>
+<body> 
+         <h1>Jobs</h1>
+         <div id="card-container"></div>
+    <script src="functions.js"></script>
+    <script>
+        // Function call inside the script tag
+        loadJobs();
+    </script>
         
 </body>
 <?php include "../include/bottombar.php" ?>
