@@ -22,6 +22,19 @@ if(!isset($_SESSION['flag'])){
 
 <body>
     <h3>Order details</h3>
+    <?php
+    //echo $_REQUEST['jobData'];
+    $jobData = json_decode($_REQUEST['jobData'],true);// use true to convert the output from object to associative array or you have to use -> arrow to access the object
+    //print_r($jobData);
+    //var_dump($jobData);
+    //$jobId = $jobData->Job_id; // Use arrow notation for objects
+    //$category = $jobData->Category; // Use arrow notation for objects
+    $jobId = $jobData['Job_id'];
+    $category = $jobData['Category'];
+    echo $jobId;
+    echo " category  is :".$category;
+
+    ?>
     <div class="card-2">
         <div class="card-left">
             <div class="space-around">
