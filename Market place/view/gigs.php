@@ -21,6 +21,12 @@ if(!isset($_SESSION['flag'])){
 <body>
     
             <h1>Gigs</h1>
+            <div id="card-container"></div>
+    <script src="functions.js"></script>
+    <script>
+        // Function call inside the script tag
+        loadgigs();
+    </script>
         
 </body>
 <?php include "../include/bottombar.php" ?>

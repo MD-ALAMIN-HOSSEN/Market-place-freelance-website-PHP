@@ -66,22 +66,22 @@ if(!isset($_SESSION['flag'])){
             <h1>Gig order</h1>
         </div>
         <div class="form-group">
-            <label for="Price">Price:</label>
-            <input class="input-normal" type="number" name="Price">
+            <label for="Priceid">Price:</label>
+            <input class="input-normal" type="number" name="Price" id="Priceid">
             <?php
                 echo "<br><span style='color: red;'>$err_Price</span>";
             ?>
         </div>
         <div class="form-group">
-            <label for="date_of_birth">Date:</label>
-            <input class="input-normal" type="date" name="date" require>
+            <label for="dateid">Date:</label>
+            <input class="input-normal" type="date" name="date" id="dateid">
             <?php
                 echo "<br><span style='color: red;'>$err_date</span>";
             ?>
         </div>
         <div class="form-group">
-            <label for="details">Requirment discreption :</label><br>
-            <input class="input-details" type="text" name="details">
+            <label for="detailsid">Requirment discreption :</label><br>
+            <input class="input-details" type="text" name="details" id="detailsid">
             <?php
                 echo "<br><span style='color: red;'>$err_details</span>";
             ?>

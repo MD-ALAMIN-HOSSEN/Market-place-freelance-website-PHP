@@ -64,7 +64,7 @@ if(!isset($_SESSION['flag'])){
                 //echo $_SESSION['user_id'];
             ?>
                 <div class="margin-button">
-                <a class="button-link2 space-around" href="job_proposal_submit.php?Job_id=<?php echo $jobData['Job_id']; ?>">Complete</a>
+                <a class="button-link2 space-around" href="job_proposal_submit.php?Job_id=<?php echo $jobData['Job_id']; ?>">Order</a>
                 <a class="button-link2 space-around" href="#">Cancel</a>
                 </div>
             <?php 

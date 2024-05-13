@@ -191,5 +191,24 @@ session_start();
 
     }
     
+    function getAllGigs() {
+        $con = dbConnection();
+        $sql = "SELECT * FROM gig";
+        $result = mysqli_query($con, $sql);
+        if($result){
+            //echo  "saved";
+            $job_data = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $job_data[] = $row;
+            }
+            return $job_data;
+           } else {
+            echo "Error: " . mysqli_error($con);
+                return false;
+            }
+
+    }
+    
+    
 
 ?>
