@@ -208,6 +208,38 @@ session_start();
             }
 
     }
+
+    function saveJobProposal(){
+        $con = dbConnection();
+        //echo "loged in user id :".$_SESSION['user_id'];
+        //echo "the job id is :" .$_REQUEST['Job_id'];
+        $status="posted";
+        $price=$_REQUEST['Price'];
+        $delivery_data=$_REQUEST['date'];
+        $Cover_letter=$_REQUEST['details'];
+        $Job_id=$_REQUEST['Job_id'];
+        $Propsed_by_user_id=$_SESSION['user_id'];
+        //$File_name=$_REQUEST['Job_id'];
+        //$status=$_REQUEST['Job_id'];
+        $uploads_dir = '../upload/';
+
+       //proposal file
+       $file_name= $_FILES['myfile']['name'];// file name
+        $file_tmp= $_FILES['myfile']['tmp_name'];//temp location
+        $file_type = $_FILES['myfile']['type'];//type
+        $file_size = $_FILES['myfile']['size'];//size
+        echo "Price: $price<br>";
+echo "Delivery Date: $delivery_data<br>";
+echo "Cover Letter: $Cover_letter<br>";
+echo "Job ID: $Job_id<br>";
+echo "Proposed By User ID: $Propsed_by_user_id<br>";
+echo "File Name: $file_name<br>";
+        move_uploaded_file($file_tmp, $uploads_dir . $file_name);
+        $sql1 = "INSERT INTO job_proposal (	Status,	Offer_amount,	Proposed_delivery_data,	Cover_letter,	DateTime,	File,	Job_id,	Propsed_by_user_id ) 
+        VALUES ('$status', '$price', '$delivery_data', '$Cover_letter', NOW(), '$file_name', '$Job_id', '$Propsed_by_user_id')";
+        
+
+    }
     
     
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 12, 2024 at 03:12 AM
+-- Generation Time: May 14, 2024 at 05:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,6 +62,14 @@ CREATE TABLE `gig` (
   `Post_dateTime` datetime NOT NULL,
   `Category` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gig`
+--
+
+INSERT INTO `gig` (`Gig_id`, `Category_id`, `User_id`, `Titel`, `Image`, `Details`, `Skills`, `Price`, `Delivery_in_days`, `Post_dateTime`, `Category`) VALUES
+(1, NULL, 2, 'do web development', 'lab9 and 1.png', 'wefhasiudhfiasdhaiosh', 'html,css,java', 10, 2, '2024-05-12 21:08:57', 'web development'),
+(3, NULL, 2, 'abc gig', 'lab8.4.png', 'this an app development gig', 'react native, sql', 100, 9, '2024-05-14 04:22:48', 'app development');
 
 -- --------------------------------------------------------
 
@@ -560,7 +568,7 @@ ALTER TABLE `fee`
 -- AUTO_INCREMENT for table `gig`
 --
 ALTER TABLE `gig`
-  MODIFY `Gig_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Gig_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `gig_proposal`

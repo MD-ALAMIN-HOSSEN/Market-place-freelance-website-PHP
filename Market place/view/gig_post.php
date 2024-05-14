@@ -5,44 +5,7 @@ if(!isset($_SESSION['flag'])){
     
     }
     
- $date=$Price=$details=$err_date=$err_Price=$err_details=$result="";
- $error=false;
- if(isset($_POST['submit'])){
-    $Price=$_POST['Price'];
-    $details=$_POST['details'];
 
-    //if(empty($_POST['date'])) {
-      //  $err_date = "Please select a date.";
-     //   $error = true;
-    //}
-    
-    if($Price==""&& !is_numeric($Price)){
-        $err_Price="Give Price ";
-        $error=true;
-        
-    }
-    if($details==""){
-        $err_details="Fill the Requirment to submit! ";
-        $error=true;
-        
-    }
-    if(!$error){
-        if(isset($_FILES['myfile'])) {
-            $file_name = $_FILES['myfile']['name'];
-            $file_tmp = $_FILES['myfile']['tmp_name'];
-            $file_destination = "../upload/" . $file_name;
-
-            if(move_uploaded_file($file_tmp, $file_destination)) {
-                //$result = "File uploaded successfully.";
-                $result="Submitted Successfully.";
-            } else {
-                $result = "Error uploading file.";
-            }
-        }
-        
-    }
-      
- }
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +17,60 @@ if(!isset($_SESSION['flag'])){
     <title>job_post</title>
     <link rel="stylesheet" href="css.css">
     <script type="text/javascript" src="javascript.js"></script>
+      
+    <script>
+        function validateForm() {
+            var gig_titel = document.getElementById('gig-titel').value;
+            var price = document.getElementById('Price').value;
+            var number_of_review = document.getElementById('number-of-review').value;
+            var delivery_in_days = document.getElementById('delivery_in_days').value;
+            var category = document.getElementById('Category').value;
+            var details = document.getElementById('details').value;
+            var skills = document.getElementById('skills').value;
+            var error = false;
+        
+            if (gig_titel === "") {
+                error = true;
+            }
+        
+            if (price === "" || isNaN(price)) {
+                error = true;
+            }
+            if (number_of_review === "" || isNaN(number_of_review)) {
+                 error = true;
+            }
+        
+            if (delivery_in_days === "" || isNaN(delivery_in_days)) {
+                error = true;
+            }
+        
+            if (category === "") {
+                error = true;
+            }
+        
+            if (details === "") {
+                error = true;
+            }
+        
+            if (skills === "") {
+                error = true;
+            }
+            var fileInput = document.getElementById('files');
+             var selectedFile = fileInput.files[0];
+
+            if (selectedFile === undefined) {
+                  //alert("Please select a file.");
+                  error = true;
+            }
+        
+            if (error) {
+                alert("Please enter all the information.");
+                
+            }
+        
+            return !error;
+        }
+    </script>
 </head>
 <?php include "../include/topbar.php" ?>
 
@@ -61,41 +78,41 @@ if(!isset($_SESSION['flag'])){
     <?php
        //echo "<br><span style='color: green;'>{$_SESSION['user_id']}</span>";
     ?>
-    <form action="../controller/gigPostCheck.php" class="form" method="post"  enctype="multipart/form-data">
+    <form action="../controller/gigPostCheck.php" class="form" method="post"  enctype="multipart/form-data" onsubmit="return validateForm();" >
         <div >
             <h2>gig post</h2>
         </div>
         <div class="form-group">
             <label for="gig-titel">gig titel:</label>
-            <input class="input-normal" type="text" name="gig-titel">
+            <input class="input-normal" type="text" name="gig-titel" id="gig-titel">
             <?php
                 echo "<br><span style='color: red;'>$err_Price</span>";
             ?>
         </div>
         <div class="form-group">
         <label for="files" class="button-style-label">Add gig image</label>
-            <input id="files" style="visibility:hidden;" type="file" name="gig-image" >
+            <input id="files" style="visibility:hidden;" type="file" name="gig-image"  >
             <?php
                 echo "<br><span style='color: red;'>$err_Price</span>";
             ?>
         </div>
         <div class="form-group">
             <label for="Price">Price:</label>
-            <input class="input-normal" type="number" name="Price">
+            <input class="input-normal" type="number" name="Price" id="Price">
             <?php
                 echo "<br><span style='color: red;'>$err_Price</span>";
             ?>
         </div>
         <div class="form-group">
             <label for="number-of-review">Number of reviews:</label>
-            <input class="input-normal" type="number" name="number-of-review">
+            <input class="input-normal" type="number" name="number-of-review" id="number-of-review">
             <?php
                 echo "<br><span style='color: red;'>$err_Price</span>";
             ?>
         </div>
         <div class="form-group">
             <label for="delivery_in_days">Delivery in days :</label>
-            <input class="input-normal" type="number" name="delivery_in_days" >
+            <input class="input-normal" type="number" name="delivery_in_days" id="delivery_in_days">
             <?php
                 echo "<br><span style='color: red;'>$err_date</span>";
             ?>
@@ -113,14 +130,14 @@ if(!isset($_SESSION['flag'])){
         </div>
         <div class="form-group">
             <label for="details">Details :</label><br>
-            <input class="input-details" type="text" name="details">
+            <input class="input-details" type="text" name="details" id="details">
             <?php
                 echo "<br><span style='color: red;'>$err_details</span>";
             ?>
         </div>
         <div class="form-group">
             <label for="skills">Skills :</label><br>
-            <input class="input-normal" type="text" name="skills">
+            <input class="input-normal" type="text" name="skills" id="skills">
             <?php
                 echo "<br><span style='color: red;'>$err_details</span>";
             ?>
