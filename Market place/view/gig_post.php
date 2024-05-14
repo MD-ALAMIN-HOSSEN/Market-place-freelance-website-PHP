@@ -85,37 +85,27 @@ if(!isset($_SESSION['flag'])){
         <div class="form-group">
             <label for="gig-titel">gig titel:</label>
             <input class="input-normal" type="text" name="gig-titel" id="gig-titel">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+        
         </div>
         <div class="form-group">
         <label for="files" class="button-style-label">Add gig image</label>
             <input id="files" style="visibility:hidden;" type="file" name="gig-image"  >
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+        
         </div>
         <div class="form-group">
             <label for="Price">Price:</label>
             <input class="input-normal" type="number" name="Price" id="Price">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+        
         </div>
         <div class="form-group">
             <label for="number-of-review">Number of reviews:</label>
             <input class="input-normal" type="number" name="number-of-review" id="number-of-review">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+    
         </div>
         <div class="form-group">
             <label for="delivery_in_days">Delivery in days :</label>
             <input class="input-normal" type="number" name="delivery_in_days" id="delivery_in_days">
-            <?php
-                echo "<br><span style='color: red;'>$err_date</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="Category">Category :</label>
@@ -124,23 +114,17 @@ if(!isset($_SESSION['flag'])){
             <option value="web development">web development</option>
             <option value="app development">app development</option>
             </select>
-            <?php
-                echo "<br><span style='color: red;'>$err_date</span>";
-            ?>
+   
         </div>
         <div class="form-group">
             <label for="details">Details :</label><br>
             <input class="input-details" type="text" name="details" id="details">
-            <?php
-                echo "<br><span style='color: red;'>$err_details</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="skills">Skills :</label><br>
             <input class="input-normal" type="text" name="skills" id="skills">
-            <?php
-                echo "<br><span style='color: red;'>$err_details</span>";
-            ?>
+
         </div>
         <div class="form-group center">
             <button class=" button-style" type="submit" name="submit">Post</button>

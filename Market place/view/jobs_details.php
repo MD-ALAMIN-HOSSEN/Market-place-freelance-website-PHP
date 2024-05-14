@@ -48,7 +48,7 @@ if(!isset($_SESSION['flag'])){
                  <br>
                  <?php echo $jobData['Skills'];?> 
                 </div>
-                <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Job_file'];?>">Files</a></div>
+                
             </div>
             <?php 
             //if its a buyer dont create the buttons for order
@@ -63,6 +63,7 @@ if(!isset($_SESSION['flag'])){
                 //echo 'eah its seller';
                 //echo $_SESSION['user_id'];
             ?>
+                <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Job_file'];?>">Files</a></div>
                 <div class="margin-button">
                 <a class="button-link2 space-around" href="job_proposal_submit.php?Job_id=<?php echo $jobData['Job_id']; ?>">Order</a>
                 <a class="button-link2 space-around" href="#">Cancel</a>

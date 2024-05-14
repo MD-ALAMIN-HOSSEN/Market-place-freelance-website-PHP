@@ -58,7 +58,7 @@ if(!isset($_SESSION['flag'])){
 
 <body>
     <?php
-        echo $alertmessage;
+       
         //../controller/jobProposalSave.php
     ?>
     <form action="../controller/jobProposalSave.php" class="form" method="post"  enctype="multipart/form-data" onsubmit="return validateForm();">
@@ -68,23 +68,17 @@ if(!isset($_SESSION['flag'])){
         <div class="form-group">
             <label for="Price">Price:</label>
             <input class="input-normal" type="number" name="Price" id="Price">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+   
         </div>
         <div class="form-group">
             <label for="date_of_birth">Date :</label>
             <input class="input-normal" type="date" name="date" id="date">
-            <?php
-                echo "<br><span style='color: red;'>$err_date</span>";
-            ?>
+    
         </div>
         <div class="form-group">
             <label for="details">Cover letter :</label><br>
             <input class="input-details" type="text" name="details" id="details">
-            <?php
-                echo "<br><span style='color: red;'>$err_details</span>";
-            ?>
+   
         </div>
         <div class="form-group ">
             <input type="file" name="myfile" value="" id="files">

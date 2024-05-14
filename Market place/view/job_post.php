@@ -90,23 +90,17 @@ if(!isset($_SESSION['flag'])){
         <div class="form-group">
             <label for="job-titel">Job titel:</label>
             <input class="input-normal" type="text" name="job-titel" id="job-titel">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="Price">Price:</label>
             <input class="input-normal" type="number" name="Price" id="Price">
-            <?php
-                echo "<br><span style='color: red;'>$err_Price</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="date_of_birth">Delivery date :</label>
             <input class="input-normal" type="date" name="date" id="date">
-            <?php
-                echo "<br><span style='color: red;'>$err_date</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="Category">Category :</label>
@@ -115,23 +109,17 @@ if(!isset($_SESSION['flag'])){
             <option value="web development">web development</option>
             <option value="app development">app development</option>
             </select>
-            <?php
-                echo "<br><span style='color: red;'>$err_date</span>";
-            ?>
+ 
         </div>
         <div class="form-group">
             <label for="details">Details :</label><br>
             <input class="input-details" type="text" name="details" id="details">
-            <?php
-                echo "<br><span style='color: red;'>$err_details</span>";
-            ?>
+
         </div>
         <div class="form-group">
             <label for="skills">Skills :</label><br>
             <input class="input-normal" type="text" name="skills" id="skills">
-            <?php
-                echo "<br><span style='color: red;'>$err_details</span>";
-            ?>
+ 
         </div>
         <div class="form-group ">
             <label for="files" class="button-style-label">Attach files</label>

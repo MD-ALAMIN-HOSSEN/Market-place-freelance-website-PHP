@@ -4,6 +4,7 @@ if(!isset($_SESSION['flag'])){
     header('location: ../view/login1.php');  
     
     }
+    
 
 
 ?>
@@ -21,7 +22,7 @@ if(!isset($_SESSION['flag'])){
 <?php include "../include/topbar.php" ?>
 
 <body>
-    <h3>Order details</h3>
+    <h3>gig details</h3>
     <?php
     //echo $_REQUEST['jobData'];
     $jobData = json_decode($_REQUEST['jobData'],true);// use true to convert the output from object to associative array or you have to use -> arrow to access the object
@@ -48,7 +49,7 @@ if(!isset($_SESSION['flag'])){
                  <br>
                  <?php echo $jobData['Skills'];?> 
                 </div>
-                <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Job_file'];?>">Files</a></div>
+                
             </div>
             <?php 
             //echo $_SESSION['status'];
@@ -64,6 +65,7 @@ if(!isset($_SESSION['flag'])){
                 //echo 'eah its seller';
                 //echo $_SESSION['user_id'];
             ?>
+               <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Job_file'];?>"> Files</a></div>
                 <div class="margin-button">
                 <a class="button-link2 space-around" href="gig_order.php?Gig_id=<?php echo $jobData['Job_id']; ?>">Order</a>
                 <a class="button-link2 space-around" href="#">Cancel</a>
