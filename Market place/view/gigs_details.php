@@ -65,9 +65,9 @@ if(!isset($_SESSION['flag'])){
                 //echo 'eah its seller';
                 //echo $_SESSION['user_id'];
             ?>
-               <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Job_file'];?>"> Files</a></div>
+               <div> <a class="button-link2 space-around" href="../upload/<?php echo $jobData['Image'];?>"> Files</a></div>
                 <div class="margin-button">
-                <a class="button-link2 space-around" href="gig_order.php?Gig_id=<?php echo $jobData['Job_id']; ?>">Order</a>
+                <a class="button-link2 space-around" href="gig_order.php?Gig_id=<?php echo $jobData['Gig_id']; ?>">Order</a>
                 <a class="button-link2 space-around" href="#">Cancel</a>
                 </div>
             <?php 
